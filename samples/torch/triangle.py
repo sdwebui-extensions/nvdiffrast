@@ -18,7 +18,7 @@ def tensor(*args, **kwargs):
 if sys.argv[1:] == ['--cuda']:
     glctx = dr.RasterizeCudaContext()
 elif sys.argv[1:] == ['--opengl']:
-    glctx = dr.RasterizeGLContext()
+    glctx = dr.RasterizeCudaContext()
 else:
     print("Specify either --cuda or --opengl")
     exit(1)

@@ -161,7 +161,7 @@ def fit_pose(max_iter           = 10000,
     col_idx = torch.from_numpy(col_idx.astype(np.int32)).cuda()
     vtx_col = torch.from_numpy(col.astype(np.float32)).cuda()
 
-    glctx = dr.RasterizeGLContext() if use_opengl else dr.RasterizeCudaContext()
+    glctx = dr.RasterizeCudaContext() if use_opengl else dr.RasterizeCudaContext()
 
     for rep in range(repeats):
         pose_target = torch.tensor(q_rnd(), device='cuda')

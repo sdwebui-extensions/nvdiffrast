@@ -75,7 +75,7 @@ def fit_env_phong(max_iter          = 1000,
     # Render.
     ang = 0.0
     imgloss_avg, phong_avg = [], []
-    glctx = dr.RasterizeGLContext() if use_opengl else dr.RasterizeCudaContext()
+    glctx = dr.RasterizeCudaContext() if use_opengl else dr.RasterizeCudaContext()
     zero_tensor = torch.as_tensor(0.0, dtype=torch.float32, device='cuda')
     one_tensor = torch.as_tensor(1.0, dtype=torch.float32, device='cuda')
 

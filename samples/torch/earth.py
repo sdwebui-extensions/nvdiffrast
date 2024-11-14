@@ -87,7 +87,7 @@ def fit_earth(max_iter          = 20000,
 
     tex     = torch.from_numpy(tex.astype(np.float32)).cuda()
     tex_opt = torch.full(tex.shape, 0.2, device='cuda', requires_grad=True)
-    glctx = dr.RasterizeGLContext() if use_opengl else dr.RasterizeCudaContext()
+    glctx = dr.RasterizeCudaContext() if use_opengl else dr.RasterizeCudaContext()
 
     ang = 0.0
 
